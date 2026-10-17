@@ -203,6 +203,23 @@
         }
 
         /* 圖片展示樣式 */
+        /* Full-bleed hero: stretches the hero section edge-to-edge */
+        #hero-photo {
+          width: 100vw;
+          position: relative;
+          left: 50%;
+          right: 50%;
+          margin-left: -50vw;
+          margin-right: -50vw;
+          box-sizing: border-box;
+          padding: 20px 0;
+          background-color: transparent;
+        }
+        #hero-photo .photo-container { max-width: none; padding: 0 20px; }
+        /* Make sure hero image fills the width and removes rounded corners/shadow */
+        #hero-photo .hero-image { width: 100%; height: auto; border-radius: 0; box-shadow: none; display:block; }
+
+        /* Fallback/default styles (kept for other uses) */
         .photo-container { text-align:center; margin:20px 0; }
         .hero-image { max-width:100%; height:auto; border-radius:8px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); display:block; margin:0 auto; }
         .caption { color:#666; font-size:0.95rem; margin-top:8px; }
@@ -236,7 +253,7 @@
         <section id="hero-photo">
           <h2>照片展示</h2>
           <div class="photo-container">
-            <img src="images/LINE_ALBUM_2026923_261017_1.jpg" alt="黃昏草地上的合照" class="hero-image" loading="lazy">
+            <img src="LINE_ALBUM_2026923_261017_1.jpg" alt="黃昏草地上的合照" class="hero-image" loading="lazy">
             <p class="caption">一起在草地上的合照（黃昏）</p>
           </div>
         </section>
