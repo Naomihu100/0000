@@ -265,6 +265,18 @@
           letter-spacing: 0.08em;
           text-shadow: 0 2px 10px rgba(0,0,0,0.35);
         }
+
+        /* 單張圖樣式：用於你剛上傳的 S__2564100.jpg */
+        .single-photo-section { text-align:center; }
+        .single-photo-section img {
+          max-width: 240px;
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+          display: inline-block;
+        }
+        .single-photo-title { font-size: 1rem; color: var(--primary-color); margin-top: 8px; }
     </style>
 </head>
 <body>
@@ -299,6 +311,13 @@
     </section>
 
     <div class="container">
+
+        <!-- 單張圖（你要的獨立圖標） -->
+        <section id="icon" class="single-photo-section">
+          <img src="S__2564100.jpg" alt="大狗教圖標" />
+          <div class="single-photo-title">大狗教圖標</div>
+        </section>
+
         <!-- 關於我 -->
         <section id="about">
             <h2>關於我</h2>
