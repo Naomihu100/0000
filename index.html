@@ -201,6 +201,11 @@
           .member-card { flex-direction: row; gap: 10px; }
           .member-photo { width: 60px; height: 60px; }
         }
+
+        /* 圖片展示樣式 */
+        .photo-container { text-align:center; margin:20px 0; }
+        .hero-image { max-width:100%; height:auto; border-radius:8px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); display:block; margin:0 auto; }
+        .caption { color:#666; font-size:0.95rem; margin-top:8px; }
     </style>
 </head>
 <body>
@@ -227,6 +232,15 @@
     </header>
 
     <div class="container">
+        <!-- 全圖展示 -->
+        <section id="hero-photo">
+          <h2>照片展示</h2>
+          <div class="photo-container">
+            <img src="images/LINE_ALBUM_2026923_261017_1.jpg" alt="黃昏草地上的合照" class="hero-image" loading="lazy">
+            <p class="caption">一起在草地上的合照（黃昏）</p>
+          </div>
+        </section>
+
         <!-- 關於我 -->
         <section id="about">
             <h2>關於我</h2>
