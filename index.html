@@ -111,6 +111,96 @@
 
         /* 隱藏原站直到通過驗證 */
         #site { display: block; }
+
+        /* ===== 人物介紹樣式（合併） ===== */
+        .team {
+          margin-bottom: 20px;
+        }
+        .team h2 {
+          margin-bottom: 16px;
+        }
+        .team-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 16px;
+        }
+        .member-card {
+          display: flex;
+          gap: 12px;
+          align-items: flex-start;
+          background: #fff;
+          padding: 14px;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+          transition: transform .12s ease, box-shadow .12s ease;
+        }
+        .member-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+        }
+        .member-photo {
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          object-fit: cover;
+          flex-shrink: 0;
+          border: 3px solid #f0f4f8;
+        }
+        .member-info {
+          flex: 1;
+        }
+        .member-name {
+          font-weight: 700;
+          color: var(--primary-color);
+          margin-bottom: 4px;
+        }
+        .member-role {
+          font-size: 0.9rem;
+          color: #666;
+          margin-bottom: 8px;
+        }
+        .member-bio {
+          font-size: 0.95rem;
+          color: #444;
+          line-height: 1.4;
+        }
+        .member-actions {
+          margin-top: 10px;
+          display:flex;
+          gap:8px;
+        }
+        .btn-sm {
+          padding: 6px 10px;
+          border-radius: 6px;
+          border: none;
+          cursor: pointer;
+          font-size: 0.9rem;
+        }
+        .btn-outline {
+          background: transparent;
+          border: 1px solid #ddd;
+          color: #333;
+        }
+        .btn-primary {
+          background: var(--secondary-color);
+          color: #fff;
+          border: none;
+        }
+
+        /* 預設隱藏完整介紹，點按後展開 */
+        .member-full {
+          display: none;
+          margin-top: 8px;
+          color: #555;
+          font-size: 0.92rem;
+        }
+        .member-full.show { display: block; }
+
+        /* 手機微調 */
+        @media (max-width:420px) {
+          .member-card { flex-direction: row; gap: 10px; }
+          .member-photo { width: 60px; height: 60px; }
+        }
     </style>
 </head>
 <body>
@@ -143,24 +233,96 @@
             <p>我是教主，熱愛大狗教</p>
         </section>
 
-        <!-- 榮譽與核心成就 -->
         <section id="honors">
             <h2>特殊活動</h2>
-            <p>大家每天都慧跑操場，非常之棒,以及段考前教主的傳教活動</p>
+            <p>大家每天都慧跑操場，非常之棒</p>
             <div class="highlight-box">
                 <ul>
-                    <li><strong>非常友善</li>
-                    <li><strong>我慧上台大</li>
-                    <li><strong>大家都很熱情</li>
+                    <li><strong>非常友善</strong></li>
+                    <li><strong>我慧上台大</strong></li>
+                    <li><strong>大家都很熱情</strong></li>
                 </ul>
             </div>
             <p>我詞窮了</p>
         </section>
 
-        <!-- 科研經歷與特質 -->
         <section id="experience">
             <h2>我們的教旨</h2>
-            <p><strong>加入大狗教你會很嗨皮</p>
+            <p><strong>加入大狗教你會很嗨皮</strong></p>
+        </section>
+
+        <!-- ===== 新增：人物介紹（放在 experience 與 future 之間） ===== -->
+        <section id="team" class="team">
+          <h2>人物介紹</h2>
+          <div class="team-grid">
+            <!-- 人物卡片：1 -->
+            <article class="member-card" data-name="教主">
+              <img class="member-photo" src="https://via.placeholder.com/150" alt="教主 照片">
+              <div class="member-info">
+                <div class="member-name">教主</div>
+                <div class="member-role">已經被電到麻痺</div>
+                <div class="member-bio">喜歡帶領大家舉辦跑操場(?與聚會</div>
+                <div class="member-actions">
+                  <button class="btn-sm btn-outline toggle-bio">更多</button>
+                  <button class="btn-sm btn-primary" onclick="alert('已向 教主 發送聯絡請求')">聯絡</button>
+                </div>
+                <div class="member-full">
+                  喔喔喔我愛打音遊看動漫，朋友們要來看國擬嗎?
+                </div>
+              </div>
+            </article>
+
+            <!-- 人物卡片：2 -->
+            <article class="member-card" data-name="副教主">
+              <img class="member-photo" src="https://via.placeholder.com/150/ffb3b3" alt="副教主 照片">
+              <div class="member-info">
+                <div class="member-name">副教主</div>
+                <div class="member-role">美美萌萌</div>
+                <div class="member-bio">非常之好副教主</div>
+                <div class="member-actions">
+                  <button class="btn-sm btn-outline toggle-bio">更多</button>
+                  <button class="btn-sm btn-primary" onclick="alert('已向 副教主 發送聯絡請求')">聯絡</button>
+                </div>
+                <div class="member-full">
+                  此女乃狩獵大王(抱抱)
+                </div>
+              </div>
+            </article>
+
+            <!-- 人物卡片：3 -->
+            <article class="member-card" data-name="哈娜公主">
+              <img class="member-photo" src="https://via.placeholder.com/150/99ccff" alt="哈娜公主 照片">
+              <div class="member-info">
+                <div class="member-name">哈娜公主</div>
+                <div class="member-role">漂漂亮亮</div>
+                <div class="member-bio">感覺是富公哇</div>
+                <div class="member-actions">
+                  <button class="btn-sm btn-outline toggle-bio">更多</button>
+                  <button class="btn-sm btn-primary" onclick="alert('已向 哈娜公主 發送聯絡請求')">聯絡</button>
+                </div>
+                <div class="member-full">
+                  目前還沒內容
+                </div>
+              </div>
+            </article>
+
+            <!-- 人物卡片：4 -->
+            <article class="member-card" data-name="大狗教取名大使">
+              <img class="member-photo" src="https://via.placeholder.com/150/ffd699" alt="大狗教取名大使 照片">
+              <div class="member-info">
+                <div class="member-name">大狗教取名大使</div>
+                <div class="member-role">大狗教梗王</div>
+                <div class="member-bio">好多奶娃表情</div>
+                <div class="member-actions">
+                  <button class="btn-sm btn-outline toggle-bio">更多</button>
+                  <button class="btn-sm btn-primary" onclick="alert('已向 大狗教取名大使 發送聯絡請求')">聯絡</button>
+                </div>
+                <div class="member-full">
+                  目前還沒內容
+                </div>
+              </div>
+            </article>
+          </div>
         </section>
 
         <!-- 未來展望 -->
@@ -226,6 +388,21 @@
         if (e.key === 'Enter') document.getElementById('ok').click();
       });
     })();
+
+    // 切換「更多」介紹（放在同一個 script 中，DOM 已在底部）
+    document.querySelectorAll('.toggle-bio').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const card = e.target.closest('.member-card');
+        const full = card.querySelector('.member-full');
+        if (full.classList.contains('show')) {
+          full.classList.remove('show');
+          btn.textContent = '更多';
+        } else {
+          full.classList.add('show');
+          btn.textContent = '收合';
+        }
+      });
+    });
   </script>
 
 </body>
