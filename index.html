@@ -266,8 +266,8 @@
           text-shadow: 0 2px 10px rgba(0,0,0,0.35);
         }
 
-        /* 單張圖樣式：用於你剛上傳的 S__2564100.jpg */
-        .single-photo-section { text-align:center; }
+        /* 單張圖樣式 */
+        .single-photo-section { text-align:center; margin: 24px 0; }
         .single-photo-section img {
           max-width: 240px;
           width: 100%;
@@ -276,7 +276,12 @@
           box-shadow: 0 6px 18px rgba(0,0,0,0.12);
           display: inline-block;
         }
-        .single-photo-title { font-size: 1rem; color: var(--primary-color); margin-top: 8px; }
+        .single-photo-title {
+          font-size: 1rem;
+          color: var(--primary-color);
+          margin-top: 8px;
+          font-weight: 700;
+        }
     </style>
 </head>
 <body>
@@ -305,8 +310,8 @@
     <section id="hero-photo">
       <div class="photo-content">
         <div class="hero-badge">大狗教</div>
-        <h2>黃昏的校園</h2>
-        <p class="caption">喔買嘎青春阿</p>
+        <h2>一起在草地上的合照</h2>
+        <p class="caption">黃昏 · 校園 · 回憶</p>
       </div>
     </section>
 
@@ -316,6 +321,12 @@
         <section id="icon" class="single-photo-section">
           <img src="S__2564100.jpg" alt="大狗教圖標" />
           <div class="single-photo-title">大狗教圖標</div>
+        </section>
+
+        <!-- 新增圖片介紹：大狗教的原型 -->
+        <section id="prototype" class="single-photo-section">
+          <img src="6393eb18-c123-4f13-8c92-0b6e93e0026f" alt="大狗教的原型" />
+          <div class="single-photo-title">大狗教的原型</div>
         </section>
 
         <!-- 關於我 -->
